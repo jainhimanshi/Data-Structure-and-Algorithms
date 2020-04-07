@@ -1,0 +1,32 @@
+/* Java program to implement basic stack 
+operations */
+ class Main { 
+     
+    static final int n = 1000; 
+    int top=-1; 
+    int a[] = new int[n]; // Maximum size of Stack 
+    
+    public static void main(String args[]) 
+    { 
+        Main s = new Main(); 
+        s.push(10); 
+        s.push(20); 
+        s.push(30); 
+    } 
+  
+   
+  
+    boolean push(int x) 
+    { 
+        if (top>=(n-1)) { 
+            System.out.println("Stack Overflow"); 
+            return false; 
+        } 
+        else { 
+            a[++top] = x; 
+            System.out.println(x + " pushed into stack"); 
+            return true; 
+        } 
+    } 
+  
+ } 
