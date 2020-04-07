@@ -1,0 +1,25 @@
+/**************************************************************
+ How to count a number of set bits in given integer?
+  input=123
+  output=321
+*******************************************************************************/
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		int a=scan.nextInt();
+		int b=scan.nextInt();
+		int result=other(a,b);
+		System.out.println(result);
+	}
+
+    public static int other(int a,int b ){
+        if(b == 0) 
+        return a;
+        int sum = a ^ b; 
+        int carry = (a & b)<<1; 
+        return other(sum, carry);
+    }
+}

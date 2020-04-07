@@ -1,0 +1,68 @@
+/******************************************************************************
+In an array 1-5 numbers are stored,find number which has duplicates.?
+input= 2,1,4,5,5
+output= 5
+*******************************************************************************/
+import java.util.*;
+public class Main
+
+{
+	public static void main(String[] args) {
+	    ArrayList<Integer>list=new ArrayList<Integer>();
+     Scanner scan=new Scanner(System.in);
+      int n=scan.nextInt();
+      
+     for(int i=0;i<n;i++){
+         list.add(scan.nextInt());
+     }
+    other(list);
+	}
+	
+	public static void other(ArrayList<Integer> list){
+	    int [] count=new int[list.size()];
+	    for(int i=0;i<list.size();i++)
+	    count[i]++;
+	    
+	    for(int i=0;i<list.size();i++){
+	        for(int j=i+1;j<list.size();j++){
+	        if(list.get(j).equals(list.get(i))){
+	        count[i]++;
+	        //count[j]++;
+	        }
+	        }
+	    }
+	    for(int k=0;k<count.length;k++){
+	        if(count[k]>1){
+	            System.out.println(list.get(k)+" has duplicates.");
+	        }
+	    }
+	}
+}
+
+import  java.util.*;
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args) {
+     ArrayList<Integer> list=new ArrayList<Integer>();
+     Scanner scan=new Scanner(System.in);
+     
+      int n=scan.nextInt();
+      
+     for(int i=0;i<n;i++){
+         list.add(scan.nextInt());
+     }
+      
+      HashSet<Integer> s=new HashSet<Integer>();
+      s.addAll(list);
+      list.clear();
+      list.addAll(s);
+      
+    
+    for(int k=0;k<list.size();k++){
+        System.out.print(list.get(k)+" ");
+    }
+	
+	}
+}

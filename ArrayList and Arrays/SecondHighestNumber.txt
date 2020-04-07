@@ -1,0 +1,37 @@
+/*How do you find the second highest number in an integer array? (solution)
+input= 1 5 3 4
+output= 4
+*/
+import java.util.*;
+public class Main
+
+{
+    static int n;
+	public static void main(String[] args) {
+	    Scanner scan=new Scanner(System.in);
+	    ArrayList<Integer>list=new ArrayList<Integer>();
+       n=scan.nextInt();
+	  for(int i=0;i<n;i++)
+	  list.add(scan.nextInt());
+	   other(list);
+	}
+	
+	public static void other(ArrayList<Integer> list){
+	    for(int i=0;i<n;i++){
+	        for(int j=i+1;j<n;j++){
+	            if(list.get(i)<list.get(j)){
+	           Collections.swap(list,i,j);
+	            }
+	            }
+	     }
+	     for(int k=0;k<n;k++){
+	         if(list.get(k).equals(list.get(k+1))){
+	         System.out.println(list.get(k+2));
+	         break;}
+	         else{
+	             System.out.println(list.get(k+1));
+	             break;
+	         }
+	     }
+	}
+}

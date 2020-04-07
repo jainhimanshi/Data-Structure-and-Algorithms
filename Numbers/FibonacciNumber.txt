@@ -1,0 +1,23 @@
+/**************************************************************
+ Write a function to compute Nth Fibonacci number? Both iterative and recursive?
+*******************************************************************************/
+import java.util.*;
+
+public class Main
+{
+    
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		int n=scan.nextInt();
+		int result=other(n);
+		System.out.println(result);
+	}
+
+    public static int other(int n){
+		if(n==0||n==1)
+	    return n;
+       else{
+       return (other(n-1)+other(n-2));
+       }
+    }
+}
