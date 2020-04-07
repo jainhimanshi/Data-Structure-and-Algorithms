@@ -1,0 +1,51 @@
+/******************************************************************************
+Find mirror image of binary tree.
+*******************************************************************************/
+
+public class Main
+{
+    static Node root;
+    static Node temp=root;
+    
+    static class Node{
+        int key;
+        Node left;
+        Node right;
+        public  Node(int key){
+           this.key=key;
+            left=null;
+            right=null;
+        } 
+    }
+    
+	public static void main(String[] args) {
+		root=new Node(27);
+		root.left=new Node(15);
+		root.right=new Node(35);
+		inorder(root);
+		System.out.println();
+		root=mirrortree(root);
+		inorder(root);
+	}
+	public static void inorder(Node root){
+	    if(root==null)
+	    return;
+	    else{
+	       System.out.println(root.key+" ");
+	       inorder(root.left);
+	       inorder(root.right);
+	    }
+	}
+	public static Node mirrortree(Node root){
+	    if(root==null)
+	    return root;
+	    if(root.left==null&&root.right==null)
+	    return root;
+	    else{
+	         Node temp=mirrortree(root.left);
+	        root.left=mirrortree(root.right);
+	        root.right=temp;
+	        return root;
+	    }
+	}
+}
