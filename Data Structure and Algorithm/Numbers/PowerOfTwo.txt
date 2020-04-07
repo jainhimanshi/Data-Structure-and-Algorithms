@@ -1,0 +1,28 @@
+/******************************************************************************
+Write code to check whether a no is a power of two or not?
+*******************************************************************************/
+import java.util.*;
+
+public class Main
+{
+   static  int count;
+    
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		int n=scan.nextInt();
+		int power=other(n);
+		System.out.println("The power of 2 in "+n+" is "+power);
+	}
+
+    public static int other(int n){
+		if(n%2!=0)
+		System.out.println("not a power of two.");
+       else{
+           while(n>1){
+           n=n/2;
+           count++;
+           }
+       }
+       return count;
+    }
+}
