@@ -8,7 +8,7 @@ public class AnagramStringCheck {
 
 	public static void main(String[] args) {
 		String s1= "hima";
-		String s2="alhi";	
+		String s2="mahi";	
 		checkAnagram(s1,s2);
 	}
 	
